@@ -10,6 +10,7 @@ import {
   DiPython,
   DiGit,
   DiPhp,
+  DiMysql
 } from "react-icons/di";
 
 
