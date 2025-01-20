@@ -12,7 +12,7 @@ const Project = () => {
             tech: ['React', 'Node', 'MongoDB'],
             repo: '',
             liveDemo: '',
-            category: ''
+            category: 'web'
         },
         {
             name: 'Real-time Chat Application',
@@ -21,7 +21,7 @@ const Project = () => {
             tech: ['Socket.io', 'express', 'redis'],
             repo: '',
             liveDemo: '',
-            category: ''
+            category: 'web'
         },
         {
             name: 'Project Management Tool',
@@ -30,7 +30,7 @@ const Project = () => {
             tech: ['vue.js', 'firebase', 'chart.js'],
             repo: '',
             liveDemo: '',
-            category: ''
+            category: 'mobile'
         }
     ]
     return (
@@ -44,9 +44,9 @@ const Project = () => {
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {
                         project.map((project, index) => {
-                            return <div key={index} className="bg-neutral-800 rounded-xl overflow-hidden shadow-lg hover:transform hover:scale-105 transition-transform duration-300 animate__animated animate__fadeInUp">
-                                <div className="h-48 bg-neutral-700 flex items-center justify-center">
-                                    <i className="fas fa-shopping-cart text-6xl text-blue-500"></i>
+                            return <div key={index} className="group bg-neutral-800 rounded-xl overflow-hidden shadow-lg hover:transform hover:scale-105 transition-transform duration-300 animate__animated animate__fadeInUp">
+                                <div className="h-48 bg-neutral-700 flex items-center justify-center relative">
+                                    <p className='absolute bottom-3 right-3  text-sm  bg-blue-100 px-3 py-1 rounded-full text-blue-400 z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100'>{project.category}</p>
                                 </div>
                                 <div className="p-6">
                                     <h3 className="text-xl font-semibold mb-2">{project.name}</h3>

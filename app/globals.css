@@ -121,3 +121,13 @@ body {
     content: " (" attr(href) ")";
   }
 }
+
+.project_card:hover>.project_category {
+  opacity: 1 !important;
+}
+
+@media (max-width:320px) {
+  .mobileimg {
+    display: none;
+  }
+}

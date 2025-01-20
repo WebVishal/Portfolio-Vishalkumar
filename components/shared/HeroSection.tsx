@@ -40,7 +40,7 @@ const HeroSection = () => {
                         </div>
                         <div className="relative animate__animated animate__fadeInRight">
                             <div
-                                className="profile-card relative overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-8 shadow-2xl transform hover:scale-105 transition-all duration-300">
+                                className="mobileimg profile-card relative overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-8 shadow-2xl transform hover:scale-105 transition-all duration-300">
                                 <div className="w-full mb-8 lg:mb-0 animate-on-load slide-in-right">
                                     <div className="relative">
                                         <div className="absolute inset-0 bg-blue-500 rounded-full opacity-10 blur-xl"></div>
