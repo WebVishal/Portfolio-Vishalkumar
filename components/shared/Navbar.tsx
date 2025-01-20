@@ -23,7 +23,7 @@ export const Navbar = () => {
                         {
                             NavItems.map((item, index) => {
                                 return <a href={item.url} className="hover:text-blue-500 transition-colors duration-300"
-                                    id={`${index}`}>{item.name}</a>
+                                    key={`${index}`}>{item.name}</a>
                             })
                         }
                     </div>
@@ -38,8 +38,7 @@ export const Navbar = () => {
                     <div className="px-2 pt-2 pb-3  space-y-1 bg-neutral-800" id="el-mtmq9h9w">
                         {
                             NavItems.map((item, index) => {
-                                return <a href={item.url} className="block px-3 py-2 rounded-md hover:bg-neutral-700"
-                                    id={`${index}`}>{item.name}</a>
+                                return <a key={index} href={item.url} className="block px-3 py-2 rounded-md hover:bg-neutral-700">{item.name}</a>
                             })
                         }
                     </div>

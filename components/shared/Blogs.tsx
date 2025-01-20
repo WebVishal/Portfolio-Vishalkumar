@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 const Blogs = () => {
@@ -52,7 +53,7 @@ const Blogs = () => {
                             className="bg-white rounded-2xl shadow-[0_0_20px_rgba(0,0,0,0.1)] hover:shadow-[0_0_25px_rgba(0,0,0,0.15)] hover:transform hover:-translate-y-1 transition-all cursor-pointer duration-300 animate-slideUp"
                             style={{ animationDelay: "0.5s" }}>
                             <div className="h-48 overflow-hidden">
-                                <img src="https://source.unsplash.com/random/800x600?web-development" alt="Blog Image"
+                                <Image src="https://source.unsplash.com/random/800x600?web-development" alt="Blog Image"
                                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
                             </div>
                             <div className="p-6">

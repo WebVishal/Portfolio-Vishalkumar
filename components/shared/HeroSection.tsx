@@ -7,7 +7,7 @@ const HeroSection = () => {
                 <div className="container mx-auto px-4">
                     <div className="grid md:grid-cols-2 gap-8 items-center">
                         <div className="space-y-6 animate__animated animate__fadeInLeft">
-                            <p className="text-blue-500 font-medium">Hello, I'm</p>
+                            <p className="text-blue-500 font-medium">Hello, I&apos;m</p>
                             <h1 className="text-4xl md:text-6xl font-bold">
                                 Vishal Kasotiya
                                 <span className="block mt-2">Full Stack Developer</span>
@@ -44,21 +44,6 @@ const HeroSection = () => {
                                 <div className="w-full mb-8 lg:mb-0 animate-on-load slide-in-right">
                                     <div className="relative">
                                         <div className="absolute inset-0 bg-blue-500 rounded-full opacity-10 blur-xl"></div>
-                                        {/* <div className="bg-neutral-800 p-8 rounded-lg border border-neutral-700 relative z-10">
-                                            <pre className="text-blue-500">
-                                                <code>{`{
-        "role": "Software Developer",
-        "experience": "2 years",
-        "skills": [
-        "Frontend Development",
-        "Backend Development",
-        "Database Design",
-        "API Integration"
-        ],
-        "status": "Available for projects"
-}`}</code>
-                                            </pre>
-                                        </div> */}
                                         <div className="bg-neutral-800 p-6 sm:p-8 md:p-10 rounded-lg border border-neutral-700 relative z-10 max-w-full sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto">
                                             <pre className="text-blue-500 text-sm sm:text-base md:text-lg">
                                                 <code>{`{
@@ -74,7 +59,6 @@ const HeroSection = () => {
 }`}</code>
                                             </pre>
                                         </div>
-
                                     </div>
                                 </div>
                                 <div

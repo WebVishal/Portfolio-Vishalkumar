@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 
 const TypingEffect: React.FC = () => {
-    const roles: string[] = ['Full Stack Developer', 'Problem Solver', 'AI Enthusiast'];
+    const roles = useMemo(() => ['Developer', 'Designer', 'Creator'], []);
     const [roleIndex, setRoleIndex] = useState<number>(0);
     const [charIndex, setCharIndex] = useState<number>(0);
     const [isDeleting, setIsDeleting] = useState<boolean>(false);

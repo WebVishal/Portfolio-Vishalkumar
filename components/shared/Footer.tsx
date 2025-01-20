@@ -23,7 +23,7 @@ const Footer = () => {
                                     </span>
                                 </div>
                             </div>
-                            <p className="text-gray-400">Building digital experiences with passion and precision. Let's create something amazing together.</p>
+                            <p className="text-gray-400">Building digital experiences with passion and precision. Let&apos;s create something amazing together.</p>
                             <div className="flex space-x-4">
                                 <a href={SocialLinks.Facebook} className="w-10 h-10 bg-neutral-800 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
                                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -95,29 +95,6 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                {/*     
-        <script>
-          // Smooth scroll for anchor links
-          document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-              e.preventDefault();
-              document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-              });
-            });
-          });
-    
-          // Newsletter form handling
-          const newsletterForm = document.querySelector('form');
-          newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = this.querySelector('input[type="email"]').value;
-            if (email) {
-              alert('Thank you for subscribing!');
-              this.reset();
-            }
-          });
-        </script> */}
             </footer>
         </section>
     )

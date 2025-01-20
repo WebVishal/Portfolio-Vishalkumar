@@ -1,6 +1,5 @@
 import AboutSection from "@/components/shared/AboutSection";
 import Blogs from "@/components/shared/Blogs";
-import ContactUs from "@/components/shared/ContactUs";
 import Exprience from "@/components/shared/Exprience";
 import Footer from "@/components/shared/Footer";
 import HeroSection from "@/components/shared/HeroSection";

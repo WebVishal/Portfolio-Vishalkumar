@@ -1,6 +1,6 @@
 import { CircleCheck } from 'lucide-react';
 import React from 'react'
-import { FaAndroid, FaAws, FaDocker, FaGitAlt, FaGithub, FaGooglePlay, FaJenkins } from "react-icons/fa6";
+import { FaAndroid, FaAws, FaDocker, FaGithub, FaGooglePlay, FaJenkins } from "react-icons/fa6";
 import { IoLogoFirebase } from 'react-icons/io5';
 import { SiClerk, SiXcode } from 'react-icons/si';
 

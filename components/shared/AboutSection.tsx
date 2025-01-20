@@ -16,9 +16,9 @@ const AboutSection = () => {
                             <h3 className="text-2xl font-semibold text-neutral-800 mb-4">Who I Am</h3>
                             <p className="text-neutral-600 leading-relaxed">
                                 With 2 years of hands-on experience in software development,
-                                I've developed a strong foundation in both frontend and backend technologies.
+                                I&apos;ve developed a strong foundation in both frontend and backend technologies.
                                 My journey began with a passion for creating efficient and user-friendly applications,
-                                and I've since worked on various projects that have enhanced my technical expertise.
+                                and I&apos;ve since worked on various projects that have enhanced my technical expertise.
                             </p>
                         </div>
 
