@@ -1,10 +1,54 @@
+'use client'
 import { SocialLinks } from '@/lib/constrant'
-import React from 'react'
+import React, { useState } from 'react'
 import { CiLocationOn } from 'react-icons/ci'
 import { FaGithub, FaLinkedin, FaPhone, FaXTwitter } from 'react-icons/fa6'
 import { MdEmail } from 'react-icons/md'
 
+
+interface FormState {
+    name: string;
+    email: string;
+    subject: string;
+    message: string;
+}
+
+interface FormEvent extends React.FormEvent<HTMLFormElement> {}
+
 const ContactUs = () => {
+    const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
+
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
+
+    const formHandler = async (e: FormEvent): Promise<void> => {
+        e.preventDefault();
+        setLoading(true);
+        setError('');
+        setSuccess('');
+        try {
+            const response = await fetch('http://localhost:3000/api/email', {
+                method: 'POST',
+                body: JSON.stringify({
+                    name: form.name,
+                    subject: form.subject,
+                    email: form.email,
+                    message: form.message
+                })
+            });
+
+            if (!response.ok) throw new Error(`Request failed: ${response.status}`);
+
+            setSuccess('Message sent successfully!');
+            setForm({ name: '', email: '', subject: '', message: '' });
+        } catch (err) {
+            console.error("Error sending:", err);
+            setError('Failed to send message.');
+        } finally {
+            setLoading(false);
+        }
+    };
     return (
         <section id="contact" className="py-20 bg-neutral-900 text-white">
             <div className="container mx-auto px-4">
@@ -33,7 +77,7 @@ const ContactUs = () => {
                                 <div className="flex items-center space-x-4">
                                     <div
                                         className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center">
-                                        <FaPhone className="text-blue-500" size={20}  />
+                                        <FaPhone className="text-blue-500" size={20} />
                                         <i className="fas fa-phone text-blue-500"></i>
                                     </div>
                                     <div>
@@ -74,32 +118,52 @@ const ContactUs = () => {
                     </div>
 
                     <div className="animate__animated animate__fadeInRight">
-                        <form id="contactForm" className="bg-neutral-800 p-6 rounded-xl">
+                        <form id="contactForm" className="bg-neutral-800 p-6 rounded-xl" onSubmit={formHandler}>
                             <div className="space-y-6">
                                 <div>
                                     <label className="block text-sm font-medium mb-2">Name</label>
-                                    <input type="text" id="name" name="name" required
-                                        className="w-full px-4 py-3 bg-neutral-700 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all" />
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        required
+                                        onChange={(e) => setForm({ ...form, name: e.target.value })}
+                                        className="w-full px-4 py-3 bg-neutral-700 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all"
+                                        value={form.name}
+                                    />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium mb-2">Email</label>
                                     <input type="email" id="email" name="email" required
+                                        value={form.email}
+                                        onChange={(e) => setForm({ ...form, email: e.target.value })}
                                         className="w-full px-4 py-3 bg-neutral-700 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all" />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium mb-2">Subject</label>
                                     <input type="text" id="subject" name="subject" required
+                                        value={form.subject}
+                                        onChange={(e) => setForm({ ...form, subject: e.target.value })}
                                         className="w-full px-4 py-3 bg-neutral-700 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all" />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium mb-2">Message</label>
-                                    <textarea id="message" name="message" rows={4} required
+                                    <textarea
+                                        id="message"
+                                        name="message"
+                                        rows={4}
+                                        onChange={(e) => setForm({ ...form, message: e.target.value })}
+                                        value={form.message}
+                                        required
                                         className="w-full px-4 py-3 bg-neutral-700 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all"></textarea>
                                 </div>
-                                <button type="submit"
+                                <button
+                                    type="submit"
                                     className="w-full bg-blue-500 hover:bg-blue-600 py-3 rounded-lg font-medium transition-colors duration-300">
-                                    Send Message
+                                    {loading ? "Sending..." : "Send Message"}
                                 </button>
+                                {error && <p className="text-red-500 mt-2">{error}</p>}
+                                {success && <p className="text-green-500 mt-2">{success}</p>}
                             </div>
                         </form>
                     </div>
